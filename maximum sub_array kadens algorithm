@@ -1,0 +1,21 @@
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int currSum = 0;
+        int maxSum = Integer.MIN_VALUE;
+        int length = nums.length; // Fixed variable name
+
+        for(int i = 0; i < length; i++) { // Corrected the loop condition
+            currSum += nums[i];
+
+            if(currSum > maxSum) {
+                maxSum = currSum;
+            }
+
+            if(currSum < 0) {
+                currSum = 0;
+            }
+        }
+        
+        return maxSum; // Moved return statement outside the loop
+    }
+}
